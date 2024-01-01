@@ -215,7 +215,7 @@ const topFunction = () => {
 
 let navbar = document.querySelector("header");
 
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", () => {
   let valueScroll = window.scrollY;
   if (valueScroll < 70) {
     navbar.classList.remove("bg-nav-color");
