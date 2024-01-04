@@ -26,6 +26,18 @@ section h1 {
   color: #fff;
 }
 
+footer {
+  background-color: #0d0c22;
+  margin-bottom: 0;
+  padding: 0.2rem 0;
+  font-size: small;
+}
+
+footer p {
+  font-weight: 400;
+  color: #c86cc0;
+}
+
 /* swiper */
 .swiper {
   width: 100%;
@@ -89,6 +101,7 @@ section h1 {
   height: 100%;
   object-fit: cover;
 }
+
 /* swiper */
 
 .container {
@@ -284,6 +297,13 @@ header {
   font-family: "Poppins";
   font-size: 2rem;
   margin: 1.5rem 0;
+}
+
+.row {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 @media only screen and (max-width: 600px) {

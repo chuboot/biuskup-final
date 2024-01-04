@@ -1,9 +1,11 @@
+// import "swiper/css";
+import "swiper/css/bundle";
 import "../../styles/style.css";
+
 // import Swiper bundle with all modules installed
 import Swiper from "swiper/bundle";
 
 // import styles bundle
-import "swiper/css/bundle";
 
 let swiper = new Swiper(".mySwiper", {
   spaceBetween: 30,
