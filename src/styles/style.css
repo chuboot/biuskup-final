@@ -29,13 +29,35 @@ section h1 {
 footer {
   background-color: #0d0c22;
   margin-bottom: 0;
-  padding: 0.2rem 0;
+  padding: 0.8rem 0;
   font-size: small;
 }
 
 footer p {
   font-weight: 400;
-  color: #c86cc0;
+  font-size: 1rem;
+  color: #898989;
+  line-height: 25px;
+}
+footer h5 {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #fff;
+  line-height: 19px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+footer ul li {
+  list-style: none;
+  margin-bottom: 16px;
+}
+footer ul li a {
+  text-decoration: none;
+  list-style: none;
+  font-size: 1rem;
+  color: #898989;
+  
 }
 
 /* swiper */
@@ -304,6 +326,12 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.logo-ft {
+  font-family: "Lalezar", sans-serif;
+  font-size: 35px;
+  color: #c86cc0;
 }
 
 @media only screen and (max-width: 600px) {
