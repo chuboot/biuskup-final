@@ -152,7 +152,7 @@ const showMovieDetail = (resmovie) => {
           <div class="caption">
             <h2>${resmovie.title}</h2>
             
-            <p>${resmovie.release_date.slice(0, 4)}</p>
+            <h5>${resmovie.release_date.slice(0, 4)}</h5>
             <div>${resmovie.genres
               .map((genre) => `<span>${genre.name}</span>`)
               .join(" - ")}</div>

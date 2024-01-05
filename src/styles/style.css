@@ -57,7 +57,6 @@ footer ul li a {
   list-style: none;
   font-size: 1rem;
   color: #898989;
-  
 }
 
 /* swiper */
@@ -115,6 +114,10 @@ footer ul li a {
 
 .swiper-slide .item .slide-text h1 {
   font-size: 5vw;
+}
+
+.swiper-slide .item .slide-text p {
+  opacity: 50%;
 }
 
 .swiper-slide img {
@@ -267,12 +270,20 @@ header {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 1.5px;
+  opacity: 50%;
 }
 
 .caption p {
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
 }
+
+.caption h5 {
+  opacity: 75%;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
 .card-img {
   border: 1px soid green;
   flex-grow: 1;
@@ -334,6 +345,25 @@ header {
   color: #c86cc0;
 }
 
+.w-social {
+  display: flex;
+  /* width: 30%; */
+  /* margin-right: auto; */
+  margin-bottom: 1rem;
+  justify-content: space-between;
+
+  text-decoration: none;
+}
+
+.w-social a {
+  color: #c86cc0;
+  font-size: 1.2rem;
+}
+
+.heart {
+  color: red;
+}
+
 @media only screen and (max-width: 600px) {
   .movie-list {
     grid-template-columns: 1fr;
@@ -346,11 +376,30 @@ header {
     display: none;
   }
 
+  .container h1 {
+    font-size: 1.7rem;
+  }
+
   .row-cast {
     justify-content: center;
   }
 
+  .row {
+    flex-direction: column;
+  }
+
+  .logo__footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
   .swiper {
     height: 100%;
+  }
+
+  .w-social {
+    width: 50%;
+    margin-right: auto;
   }
 }
