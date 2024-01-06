@@ -38,7 +38,7 @@ class AppBar extends HTMLElement {
           }
         </style>
         
-        <div class="brand-logo"><a href="">biuskup</a></div>
+        <div class="brand-logo"><a href="/">biuskup</a></div>
       `;
   }
 }
