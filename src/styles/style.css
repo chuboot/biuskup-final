@@ -33,44 +33,16 @@ footer {
   font-size: small;
 }
 
-footer p {
-  font-weight: 400;
-  font-size: 1rem;
-  color: #898989;
-  line-height: 25px;
-}
-footer h5 {
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: #fff;
-  line-height: 19px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-footer ul li {
-  list-style: none;
-  margin-bottom: 16px;
-}
-footer ul li a {
-  text-decoration: none;
-  list-style: none;
-  font-size: 1rem;
-  color: #898989;
-}
-
 /* swiper */
 .swiper {
   width: 100%;
   height: 100vh;
   top: 0;
   position: relative;
-  /* z-index: -1; */
 }
 
 .swiper-slide {
   text-align: center;
-  /* background: pink; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,22 +65,16 @@ footer ul li a {
   height: 150px;
   bottom: 0;
   left: 0;
-  /* background: rgba(0, 0, 0, 0.6); */
   background-image: linear-gradient(transparent, black);
 }
 
 .swiper-slide .item .slide-text {
   position: absolute;
-
   z-index: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -45%);
-  /* display: flex; */
-  /* justify-content: center; */
-  /* justify-items: center; */
   width: 70%;
-  /* background-color: aquamarine; */
   color: #fff;
 }
 
@@ -143,7 +109,6 @@ header {
   z-index: 3;
   display: flex;
   padding: 0;
-  /* height: 75px; */
   justify-items: center;
   justify-content: center;
 }
@@ -152,33 +117,18 @@ header {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.app-bar {
-  margin: 0 auto;
-  /* background: pink; */
-}
-
-/* logo */
-
-/* logo */
 /* home */
 
 .movie-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  /* grid-template-columns: repeat(3, 1fr); */
-  /* grid-template-rows: 100px; */
   gap: 5rem;
-  /* margin-top: 3rem; */
-  /* padding: 20px; */
-  /* background-color: orange; */
 }
 
 .card-movie {
   max-width: 100%;
-  /* margin: 0.75rem; */
   margin-bottom: 2rem;
   cursor: pointer;
-  /* background-color: aqua; */
 }
 
 .card-movie:hover > h5.movie-title {
@@ -189,9 +139,6 @@ header {
   color: #fff;
   font-size: 1.2rem;
   font-weight: 400;
-  /* overflow: hidden; */
-  /* white-space: nowrap; */
-  /* text-overflow: ellipsis; */
 }
 
 .card-movie-img {
@@ -213,7 +160,6 @@ header {
 /* detail movie */
 .hero {
   display: flex;
-  /* flex-wrap: wrap; */
   gap: 2.5rem;
   justify-content: space-between;
   margin-top: 5rem;
@@ -332,38 +278,6 @@ header {
   margin: 1.5rem 0;
 }
 
-.row {
-  margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.logo-ft {
-  font-family: "Lalezar", sans-serif;
-  font-size: 35px;
-  color: #c86cc0;
-}
-
-.w-social {
-  display: flex;
-  /* width: 30%; */
-  /* margin-right: auto; */
-  margin-bottom: 1rem;
-  justify-content: space-between;
-
-  text-decoration: none;
-}
-
-.w-social a {
-  color: #c86cc0;
-  font-size: 1.2rem;
-}
-
-.heart {
-  color: red;
-}
-
 @media only screen and (max-width: 600px) {
   .movie-list {
     grid-template-columns: 1fr;
@@ -372,6 +286,7 @@ header {
   .hero {
     flex-wrap: wrap;
   }
+
   .hero .card-img img {
     display: none;
   }
@@ -382,16 +297,6 @@ header {
 
   .row-cast {
     justify-content: center;
-  }
-
-  .row {
-    flex-direction: column;
-  }
-
-  .logo__footer {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem;
   }
 
   .swiper {
