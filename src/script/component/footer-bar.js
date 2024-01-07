@@ -85,7 +85,9 @@ class FooterBar extends HTMLElement {
             .logo-sec {
               display: flex;
               justify-content: space-between;
+              padding-bottom: 2rem;
               margin-bottom: 2rem;
+              border-bottom: 0.5px solid grey;
             }
           }
         </style>

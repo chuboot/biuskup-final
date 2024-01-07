@@ -83,6 +83,9 @@ footer {
 }
 
 .swiper-slide .item .slide-text p {
+  color: #fff;
+  /* background-color: darkorchid; */
+  text-decoration: underline;
   opacity: 50%;
 }
 
@@ -122,12 +125,11 @@ header {
 .movie-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 5rem;
+  gap: 3rem;
 }
 
 .card-movie {
   max-width: 100%;
-  margin-bottom: 2rem;
   cursor: pointer;
 }
 
