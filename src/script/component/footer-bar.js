@@ -11,6 +11,7 @@ class FooterBar extends HTMLElement {
   render() {
     this.shadowDOM.innerHTML = `
         <style>
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
           * {
             margin: 0;
             padding: 0;

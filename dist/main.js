@@ -45,13 +45,185 @@ class AppBar extends HTMLElement {
           .brand-logo a:hover {
             text-shadow: 2px 2px 8px darkorchid;
           }
+          @media only screen and (max-width: 600px) {
+            .brand-logo {
+              font-size: 1.7rem;
+            }
+            .brand-logo a {
+              padding: 0.7rem 0;
+            }
+          }
         </style>
         
-        <div class="brand-logo"><a href="">biuskup</a></div>
+        <div class="brand-logo"><a href="/">biuskup</a></div>
       `;
   }
 }
 customElements.define("app-bar", AppBar);
+
+/***/ }),
+
+/***/ "./src/script/component/footer-bar.js":
+/*!********************************************!*\
+  !*** ./src/script/component/footer-bar.js ***!
+  \********************************************/
+/***/ (() => {
+
+class FooterBar extends HTMLElement {
+  constructor() {
+    super();
+    this.shadowDOM = this.attachShadow({
+      mode: "open"
+    });
+  }
+  connectedCallback() {
+    this.render();
+  }
+  render() {
+    this.shadowDOM.innerHTML = `
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          :host {
+            display: block;
+            width: 100%;
+            color: white;
+          }
+          p {
+            font-weight: 400;
+            font-size: 1rem;
+            color: #898989;
+            line-height: 25px;
+          }
+
+          h5 {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #fff;
+            line-height: 19px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+          }
+
+          ul li {
+            list-style: none;
+            margin-bottom: 16px;
+          }
+
+          ul li a {
+            text-decoration: none;
+            list-style: none;
+            font-size: 1rem;
+            color: #898989;
+          }
+          .row {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+          }
+
+          .logo-ft {
+            font-family: "Lalezar", sans-serif;
+            font-size: 35px;
+            color: #c86cc0;
+          }
+
+          .w-social {
+            display: flex;
+            margin-bottom: 1rem;
+            justify-content: space-between;
+            text-decoration: none;
+          }
+
+          .w-social a {
+            color: #c86cc0;
+            font-size: 1.2rem;
+          }
+
+          .heart {
+            color: red;
+          }
+          @media only screen and (max-width: 600px) {
+            .row {
+              flex-direction: column;
+            }
+
+            .logo-sec {
+              display: flex;
+              justify-content: space-between;
+              padding-bottom: 2rem;
+              margin-bottom: 2rem;
+              border-bottom: 0.5px solid grey;
+            }
+          }
+        </style>
+        
+        <div class="row">
+          <div class="logo-sec">
+            <div class="logo-ft">biuskup</div>
+            <p>
+              &copy; 2023 Biuskup. <br />
+              All rights reserved.
+            </p>
+          </div>
+
+          <div class="legal-links">
+            <h5>Company</h5>
+            <ul>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Mearch store</a>
+              </li>
+              <li>
+                <a href="#">Term of Service</a>
+              </li>
+            </ul>
+          </div>
+          <div class="legal-links">
+            <h5>Explore</h5>
+            <ul>
+              <li>
+                <a href="#">Templates</a>
+              </li>
+              <li>
+                <a href="#">Apps</a>
+              </li>
+              <li>
+                <a href="#">Payments</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="legal-links">
+            <h5>Follow us on:</h5>
+            <div class="w-social">
+              <div>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+              </div>
+              <div>
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+              </div>
+              <div>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+              </div>
+              <div>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+              </div>
+            </div>
+            <span>Made with <span class="heart">♥</span> by Baunchu</span>
+          </div>
+        </div>
+      `;
+  }
+}
+customElements.define("footer-bar", FooterBar);
 
 /***/ }),
 
@@ -66,16 +238,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/style.css */ "./src/styles/style.css");
-/* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
-/* harmony import */ var swiper_css_bundle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/css/bundle */ "./node_modules/swiper/swiper-bundle.min.css");
+/* harmony import */ var swiper_css_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/css/bundle */ "./node_modules/swiper/swiper-bundle.min.css");
+/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../styles/style.css */ "./src/styles/style.css");
+/* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
+// import "swiper/css";
+
+
 
 // import Swiper bundle with all modules installed
 
 
 // import styles bundle
 
-let swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".mySwiper", {
+let swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__["default"](".mySwiper", {
   spaceBetween: 30,
   centeredSlides: true,
   autoplay: {
@@ -92,25 +267,26 @@ let swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__["default"](".mySwipe
     prevEl: ".swiper-button-prev"
   }
 });
-const getCards = async () => {
-  const response = await fetch("https://api.themoviedb.org/3/movie/popular?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US&page=1");
-  const responseJson = await response.json();
-  const movies = responseJson.results;
-  console.log(movies);
-  renderAllMovies(movies);
-};
-const getSlides = async () => {
-  const response = await fetch("https://api.themoviedb.org/3/movie/popular?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US&page=1");
-  const resJson = await response.json();
-  const slides = resJson.results.slice(0, 4);
-  console.log(slides);
-  renderAllSlides(slides);
-};
-const renderAllSlides = slides => {
-  const wrapperSlide = document.querySelector(".swiper-wrapper");
-  wrapperSlide.innerHTML = "";
-  slides.forEach(sl => {
-    wrapperSlide.innerHTML += `
+const main = () => {
+  const getCards = async () => {
+    const response = await fetch("https://api.themoviedb.org/3/movie/popular?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US&page=1");
+    const responseJson = await response.json();
+    const movies = responseJson.results;
+    console.log(movies);
+    renderAllMovies(movies);
+  };
+  const getSlides = async () => {
+    const response = await fetch("https://api.themoviedb.org/3/movie/popular?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US&page=1");
+    const resJson = await response.json();
+    const slides = resJson.results.slice(0, 4);
+    console.log(slides);
+    renderAllSlides(slides);
+  };
+  const renderAllSlides = slides => {
+    const wrapperSlide = document.querySelector(".swiper-wrapper");
+    wrapperSlide.innerHTML = "";
+    slides.forEach(sl => {
+      wrapperSlide.innerHTML += `
     <div class="swiper-slide">
               <div class="item">
                 <img src="https://www.themoviedb.org/t/p/original/${sl.backdrop_path}" alt="slider-image" />
@@ -121,31 +297,31 @@ const renderAllSlides = slides => {
               </div>
     </div>
     `;
-  });
-};
-const getCast = movidcast => {
-  fetch(`https://api.themoviedb.org/3/movie/${movidcast}/credits?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US`).then(response => {
-    return response.json();
-  }).then(rescast => {
-    const moviesCast = rescast.cast.slice(0, 4);
-    console.log(moviesCast);
-    renderAllCast(moviesCast);
-  });
-};
-const getTrailer = movivid => {
-  fetch(`https://api.themoviedb.org/3/movie/${movivid}/videos?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US`).then(response => {
-    return response.json();
-  }).then(resvid => {
-    const moviesTrailer = resvid.results.slice(0, 2);
-    console.log(moviesTrailer);
-    renderAllTrailer(moviesTrailer);
-  });
-};
-const renderAllCast = moviesCast => {
-  const listCast = document.createElement("div");
-  listCast.innerHTML = "";
-  moviesCast.forEach(cast => {
-    listCast.innerHTML += `
+    });
+  };
+  const getCast = async movidcast => {
+    await fetch(`https://api.themoviedb.org/3/movie/${movidcast}/credits?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US`).then(response => {
+      return response.json();
+    }).then(rescast => {
+      const moviesCast = rescast.cast.slice(0, 4);
+      console.log(moviesCast);
+      renderAllCast(moviesCast);
+    });
+  };
+  const getTrailer = async movivid => {
+    await fetch(`https://api.themoviedb.org/3/movie/${movivid}/videos?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US`).then(response => {
+      return response.json();
+    }).then(resvid => {
+      const moviesTrailer = resvid.results.slice(0, 2);
+      console.log(moviesTrailer);
+      renderAllTrailer(moviesTrailer);
+    });
+  };
+  const renderAllCast = moviesCast => {
+    const listCast = document.createElement("div");
+    listCast.innerHTML = "";
+    moviesCast.forEach(cast => {
+      listCast.innerHTML += `
             <div class="card-cast">
                 <div class="cast-img">
                   <img src="https://www.themoviedb.org/t/p/original/${cast.profile_path}" alt="" />
@@ -153,15 +329,15 @@ const renderAllCast = moviesCast => {
             <h5>${cast.name}</h5>
             </div>
         `;
-  });
-  listCast.classList.add("row-cast");
-  document.querySelector(".caption").appendChild(listCast);
-};
-const renderAllTrailer = moviesTrailer => {
-  const listTrailer = document.createElement("div");
-  listTrailer.innerHTML = "";
-  moviesTrailer.forEach((trailer, index) => {
-    listTrailer.innerHTML += `
+    });
+    listCast.classList.add("row-cast");
+    document.querySelector(".caption").appendChild(listCast);
+  };
+  const renderAllTrailer = moviesTrailer => {
+    const listTrailer = document.createElement("div");
+    listTrailer.innerHTML = "";
+    moviesTrailer.forEach((trailer, index) => {
+      listTrailer.innerHTML += `
           <h2>Official Trailer #${index + 1}</h2>
           <iframe
             width="100%"
@@ -174,12 +350,12 @@ const renderAllTrailer = moviesTrailer => {
           ></iframe>
 
     `;
-  });
-  listTrailer.classList.add("trailer");
-  document.querySelector("section .container").appendChild(listTrailer);
-};
-const showMovieDetail = resmovie => {
-  return `
+    });
+    listTrailer.classList.add("trailer");
+    document.querySelector("section .container").appendChild(listTrailer);
+  };
+  const showMovieDetail = resmovie => {
+    return `
       <div class="backdrop">
         <img src="https://www.themoviedb.org/t/p/original/${resmovie.backdrop_path}"" alt="${resmovie.title}" />
       </div>
@@ -191,7 +367,7 @@ const showMovieDetail = resmovie => {
           <div class="caption">
             <h2>${resmovie.title}</h2>
             
-            <p>${resmovie.release_date.slice(0, 4)}</p>
+            <h5>${resmovie.release_date.slice(0, 4)}</h5>
             <div>${resmovie.genres.map(genre => `<span>${genre.name}</span>`).join(" - ")}</div>
             <p>${resmovie.overview}</p>
             <h4>Cast:</h4>
@@ -200,12 +376,12 @@ const showMovieDetail = resmovie => {
         </div>
       </div>
     `;
-};
-const renderAllMovies = movies => {
-  const listMovieElement = document.querySelector(".movie-list");
-  listMovieElement.innerHTML = "";
-  movies.forEach(movie => {
-    listMovieElement.innerHTML += `
+  };
+  const renderAllMovies = movies => {
+    const listMovieElement = document.querySelector(".movie-list");
+    listMovieElement.innerHTML = "";
+    movies.forEach(movie => {
+      listMovieElement.innerHTML += `
         <div class="card-movie">
             <div class="card-movie-img">
               <img src="https://www.themoviedb.org/t/p/original/${movie.poster_path}" alt="${movie.title}" data-id="${movie.id}" />
@@ -214,43 +390,44 @@ const renderAllMovies = movies => {
         </div>
     
     `;
-  });
-  const detailMovie = document.querySelectorAll(".card-movie-img img");
-  detailMovie.forEach(img => {
-    img.addEventListener("click", function () {
-      const movieID = this.dataset.id;
-      topFunction();
-      // console.log(movieID);
-      fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US`).then(response => {
-        return response.json();
-      }).then(resmovie => {
-        const secMovie = document.querySelector("section");
-        const detailsMovies = showMovieDetail(resmovie);
-        secMovie.innerHTML = detailsMovies;
-      });
-      getCast(movieID);
-      getTrailer(movieID);
     });
+    const detailMovie = document.querySelectorAll(".card-movie-img img");
+    detailMovie.forEach(img => {
+      img.addEventListener("click", function () {
+        const movieID = this.dataset.id;
+        topFunction();
+        // console.log(movieID);
+        fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US`).then(response => {
+          return response.json();
+        }).then(resmovie => {
+          const secMovie = document.querySelector("section");
+          const detailsMovies = showMovieDetail(resmovie);
+          secMovie.innerHTML = detailsMovies;
+        });
+        getCast(movieID);
+        getTrailer(movieID);
+      });
+    });
+  };
+  getSlides();
+  getCards();
+  const topFunction = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
+
+  //change bg when scroll
+
+  let navbar = document.querySelector("header");
+  window.addEventListener("scroll", () => {
+    let valueScroll = window.scrollY;
+    if (valueScroll < 70) {
+      navbar.classList.remove("bg-nav-color");
+    } else {
+      navbar.classList.add("bg-nav-color");
+    }
   });
 };
-getSlides();
-getCards();
-const topFunction = () => {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-};
-
-//change bg when scroll
-
-let navbar = document.querySelector("header");
-window.addEventListener("scroll", function () {
-  let valueScroll = window.scrollY;
-  if (valueScroll < 70) {
-    navbar.classList.remove("bg-nav-color");
-  } else {
-    navbar.classList.add("bg-nav-color");
-  }
-});
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (main);
 
 /***/ }),
@@ -10760,10 +10937,13 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _script_component_app_bar_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./script/component/app-bar.js */ "./src/script/component/app-bar.js");
 /* harmony import */ var _script_component_app_bar_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_script_component_app_bar_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _script_view_main_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./script/view/main.js */ "./src/script/view/main.js");
+/* harmony import */ var _script_component_footer_bar_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./script/component/footer-bar.js */ "./src/script/component/footer-bar.js");
+/* harmony import */ var _script_component_footer_bar_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_script_component_footer_bar_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _script_view_main_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./script/view/main.js */ "./src/script/view/main.js");
 
 
-document.addEventListener("DOMContentLoaded", _script_view_main_js__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+document.addEventListener("DOMContentLoaded", _script_view_main_js__WEBPACK_IMPORTED_MODULE_2__["default"]);
 })();
 
 /******/ })()
