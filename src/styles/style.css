@@ -124,13 +124,22 @@ header {
 
 .movie-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 3rem;
 }
 
 .card-movie {
   max-width: 100%;
   cursor: pointer;
+}
+
+.movie-title {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .card-movie:hover > h5.movie-title {
