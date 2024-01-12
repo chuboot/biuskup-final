@@ -155,7 +155,7 @@ class FooterBar extends HTMLElement {
                 <a href=""><i class="fa-brands fa-youtube"></i></a>
               </div>
             </div>
-            <span>Made with <span class="heart">♥</span> by Baunchu ( I Gede Subagia )</span>
+            <span>Made with <span class="heart"><i class="fa-solid fa-face-kiss-wink-heart"></i></span> by Baunchu ( I Gede Subagia )</span>
           </div>
         </div>
       `;
