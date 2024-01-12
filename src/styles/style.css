@@ -23,11 +23,12 @@ section h1 {
   font-size: 42px;
   font-family: "Poppins";
   padding: 3rem 1rem;
-  color: #fff;
+  /* color: #fff; */
 }
 
 footer {
   background-color: #0d0c22;
+  margin-top: 5rem;
   margin-bottom: 0;
   padding: 0.8rem 0;
   font-size: small;
@@ -120,6 +121,25 @@ header {
 
 .bg-nav-color {
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+.title-section {
+  margin-bottom: 3rem;
+  padding-left: 2rem;
+  --angle: to bottom;
+  --border-top-width: 0;
+  --border-right-width: 0;
+  --border-bottom-width: 0;
+  --border-left-width: 0.2em;
+
+  border-width: 0;
+  border-style: solid;
+  border-top-width: var(--border-top-width);
+  border-right-width: var(--border-right-width);
+  border-bottom-width: var(--border-bottom-width);
+  border-left-width: var(--border-left-width);
+  border-image: linear-gradient(var(--angle), #229ee6, #d53a9d, #743ad5) 1;
+  /* border-image: linear-gradient(to right, #d53a9d, #743ad5); */
 }
 
 /* home */
