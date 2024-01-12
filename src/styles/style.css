@@ -82,10 +82,12 @@ footer {
   font-size: 5vw;
 }
 
-.swiper-slide .item .slide-text p {
+.swiper-slide .item .slide-text span {
   color: #fff;
-  /* background-color: darkorchid; */
-  text-decoration: underline;
+  background-color: darkorchid;
+  /* text-decoration: underline; */
+  border-radius: 20px;
+  padding: 2px 8px;
   opacity: 50%;
 }
 
@@ -235,7 +237,7 @@ header {
   margin-bottom: 0.8rem;
 }
 
-.caption h5 {
+.caption-year {
   opacity: 75%;
   font-weight: 600;
   letter-spacing: 2px;
@@ -264,9 +266,22 @@ header {
   gap: 20px;
 }
 
-.cast-img {
-  width: 150px;
+.card-cast {
+  /* border: 1px solid pink; */
+  width: 20%;
 }
+
+.card-cast h5 {
+  font-size: 1rem;
+  font-weight: 200;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* .cast-img {
+  width: 150px;
+} */
 
 .cast-img img {
   width: 100%;
@@ -290,8 +305,11 @@ header {
 }
 
 @media only screen and (max-width: 600px) {
+  .swiper-slide .item .slide-text h1 {
+    font-size: 7vw;
+  }
+
   .movie-list {
-    /* display: grid; */
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.8rem;
   }
@@ -308,12 +326,20 @@ header {
     padding: 1.5rem 0;
   }
 
+  .container {
+    max-width: 90%;
+  }
+
   .container h1 {
     font-size: 1.7rem;
   }
 
+  .card-cast {
+    /* border: 1px solid pink; */
+    width: 45%;
+  }
   .row-cast {
-    justify-content: center;
+    justify-content: space-between;
   }
 
   .swiper {

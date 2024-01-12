@@ -59,7 +59,7 @@ const main = () => {
                 <img src="https://www.themoviedb.org/t/p/original/${sl.backdrop_path}" alt="slider-image" />
                 <div class="slide-text">
                     <h1>${sl.title}</h1>
-                    <p>Release Date: ${sl.release_date}</p>
+                    <span>Release Date: ${sl.release_date}</span>
                 </div>
               </div>
     </div>
@@ -100,10 +100,10 @@ const main = () => {
     moviesCast.forEach((cast) => {
       listCast.innerHTML += `
             <div class="card-cast">
-                <div class="cast-img">
-                  <img src="https://www.themoviedb.org/t/p/original/${cast.profile_path}" alt="" />
-                </div>
-            <h5>${cast.name}</h5>
+              <div class="cast-img">
+                <img src="https://www.themoviedb.org/t/p/original/${cast.profile_path}" alt="" />
+              </div>  
+              <h5>${cast.name}</h5>
             </div>
         `;
     });
@@ -153,7 +153,7 @@ const main = () => {
           <div class="caption">
             <h2>${resmovie.title}</h2>
             
-            <h5>${resmovie.release_date.slice(0, 4)}</h5>
+            <h5 class="caption-year">${resmovie.release_date.slice(0, 4)}</h5>
             <div>${resmovie.genres
               .map((genre) => `<span>${genre.name}</span>`)
               .join(" - ")}</div>
@@ -184,11 +184,11 @@ const main = () => {
 
     const detailMovie = document.querySelectorAll(".card-movie-img img");
     detailMovie.forEach((img) => {
-      img.addEventListener("click", function () {
+      img.addEventListener("click", async function () {
         const movieID = this.dataset.id;
         topFunction();
         // console.log(movieID);
-        fetch(
+        await fetch(
           `https://api.themoviedb.org/3/movie/${movieID}?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US`
         )
           .then((response) => {
@@ -197,7 +197,6 @@ const main = () => {
           .then((resmovie) => {
             const secMovie = document.querySelector("section");
             const detailsMovies = showMovieDetail(resmovie);
-
             secMovie.innerHTML = detailsMovies;
           });
         getCast(movieID);
@@ -227,4 +226,5 @@ const main = () => {
     }
   });
 };
+
 export default main;

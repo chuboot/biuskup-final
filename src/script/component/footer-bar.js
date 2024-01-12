@@ -11,17 +11,19 @@ class FooterBar extends HTMLElement {
   render() {
     this.shadowDOM.innerHTML = `
         <style>
-        @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+          @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
           * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
           }
+
           :host {
             display: block;
             width: 100%;
             color: white;
           }
+
           p {
             font-weight: 400;
             font-size: 1rem;
@@ -50,6 +52,7 @@ class FooterBar extends HTMLElement {
             font-size: 1rem;
             color: #898989;
           }
+
           .row {
             margin-top: 2rem;
             display: flex;
@@ -90,6 +93,7 @@ class FooterBar extends HTMLElement {
               margin-bottom: 2rem;
               border-bottom: 0.5px solid grey;
             }
+
           }
         </style>
         

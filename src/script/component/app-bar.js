@@ -16,11 +16,13 @@ class AppBar extends HTMLElement {
             padding: 0;
             box-sizing: border-box;
           }
+
           :host {
             display: block;
             width: 100%;
             color: white;
           }
+
           .brand-logo {
             display: flex;
             justify-content: center;
@@ -28,21 +30,26 @@ class AppBar extends HTMLElement {
             font-family: "Lalezar", sans-serif;
             font-size: 35px;
           }
+
           .brand-logo a {
             color: #fff;
             text-decoration: none;
             padding: 1rem 0;
           }
+
           .brand-logo a:hover {
             text-shadow: 2px 2px 8px darkorchid;
           }
+
           @media only screen and (max-width: 600px) {
             .brand-logo {
               font-size: 1.7rem;
             }
+
             .brand-logo a {
               padding: 0.7rem 0;
             }
+            
           }
         </style>
         
