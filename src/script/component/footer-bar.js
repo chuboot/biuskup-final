@@ -77,6 +77,9 @@ class FooterBar extends HTMLElement {
             color: #c86cc0;
             font-size: 1.2rem;
           }
+          .w-social a:hover {
+            color: darkorchid;
+          }
 
           .heart {
             color: red;
@@ -138,20 +141,21 @@ class FooterBar extends HTMLElement {
           <div class="legal-links">
             <h5>Follow us on:</h5>
             <div class="w-social">
-              <div>
-                <a href=""><i class="fa-brands fa-youtube"></i></a>
-              </div>
+              
               <div>
                 <a href=""><i class="fa-brands fa-facebook"></i></a>
               </div>
               <div>
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.instagram.com/baunchu21/"><i class="fa-brands fa-instagram"></i></a>
               </div>
               <div>
-                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+              </div>
+              <div>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
               </div>
             </div>
-            <span>Made with <span class="heart">♥</span> by Baunchu</span>
+            <span>Made with <span class="heart">♥</span> by Baunchu ( I Gede Subagia )</span>
           </div>
         </div>
       `;
