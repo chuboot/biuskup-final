@@ -59,7 +59,7 @@ const main = () => {
                 <img src="https://www.themoviedb.org/t/p/original/${sl.backdrop_path}" alt="slider-image" />
                 <div class="slide-text">
                     <h1>${sl.title}</h1>
-                    <span>Release Date: ${sl.release_date}</span>
+                    <span><i class="fa-solid fa-fire"></i> ${sl.release_date}</span>
                 </div>
               </div>
     </div>
