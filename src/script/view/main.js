@@ -144,6 +144,10 @@ const main = () => {
         }"" alt="${resmovie.title}" />
       </div>
       <div class="container">
+      <ul class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li>${resmovie.title}</li>
+      </ul>
         <div class="hero">
           <div class="card-img">
             <img src="https://www.themoviedb.org/t/p/original/${

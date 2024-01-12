@@ -191,11 +191,45 @@ header {
 }
 
 /* detail movie */
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  margin-top: 5rem;
+  background-color: rgba(0, 0, 0, 0.25);
+  width: fit-content;
+  margin-right: auto;
+}
+ul.breadcrumb li {
+  display: inline-block;
+  font-size: 0.8rem;
+  /* color: rgba(0, 0, 0, 0.75); */
+  /* opacity: 50%; */
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: #c86cc0;
+
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #fff;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: darkorchid;
+  text-decoration: underline;
+}
+
+ul.breadcrumb li:last-child {
+  /* color: red; */
+  opacity: 50%;
+}
+
 .hero {
   display: flex;
   gap: 2.5rem;
   justify-content: space-between;
-  margin-top: 5rem;
+  margin-top: 3rem;
   margin-bottom: 2rem;
 }
 
@@ -266,8 +300,10 @@ header {
 .card-img {
   border: 1px soid green;
   flex-grow: 1;
-  flex-basis: 700px;
-  width: 330px;
+  /* flex-basis: 700px; */
+  /* flex-basis: 40%; */
+  /* width: 330px; */
+  /* width: 40%; */
   height: 100%;
   border-radius: 25px;
 }
@@ -336,9 +372,10 @@ header {
 
   .hero {
     flex-wrap: wrap;
+    margin-top: 1rem;
   }
 
-  .hero .card-img img {
+  .hero .card-img {
     display: none;
   }
 
