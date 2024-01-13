@@ -1,7 +1,7 @@
 class FooterBar extends HTMLElement {
   constructor() {
     super();
-    this.shadowDOM = this.attachShadow({ mode: "open" });
+    this.shadowDOM = this.attachShadow({ mode: 'open' });
   }
 
   connectedCallback() {
@@ -12,6 +12,7 @@ class FooterBar extends HTMLElement {
     this.shadowDOM.innerHTML = `
         <style>
           @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+
           * {
             margin: 0;
             padding: 0;
@@ -77,13 +78,15 @@ class FooterBar extends HTMLElement {
             color: #c86cc0;
             font-size: 1.2rem;
           }
+
           .w-social a:hover {
             color: darkorchid;
           }
 
           .heart {
-            color: red;
+            color: orange;
           }
+          
           @media only screen and (max-width: 600px) {
             .row {
               flex-direction: column;
@@ -162,4 +165,4 @@ class FooterBar extends HTMLElement {
   }
 }
 
-customElements.define("footer-bar", FooterBar);
+customElements.define('footer-bar', FooterBar);

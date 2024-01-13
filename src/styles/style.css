@@ -23,7 +23,6 @@ section h1 {
   font-size: 42px;
   font-family: "Poppins";
   padding: 3rem 1rem;
-  /* color: #fff; */
 }
 
 footer {
@@ -86,7 +85,6 @@ footer {
 .swiper-slide .item .slide-text span {
   color: #fff;
   background-color: darkorchid;
-  /* text-decoration: underline; */
   border-radius: 20px;
   padding: 2px 8px;
   opacity: 50%;
@@ -139,7 +137,6 @@ header {
   border-bottom-width: var(--border-bottom-width);
   border-left-width: var(--border-left-width);
   border-image: linear-gradient(var(--angle), #229ee6, #d53a9d, #743ad5) 1;
-  /* border-image: linear-gradient(to right, #d53a9d, #743ad5); */
 }
 
 /* home */
@@ -147,7 +144,7 @@ header {
 .movie-list {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 3rem;
+  gap: 2.3rem;
 }
 
 .card-movie {
@@ -202,10 +199,8 @@ ul.breadcrumb {
 ul.breadcrumb li {
   display: inline-block;
   font-size: 0.8rem;
-  /* color: rgba(0, 0, 0, 0.75); */
-  /* opacity: 50%; */
 }
-ul.breadcrumb li+li:before {
+ul.breadcrumb li + li:before {
   padding: 8px;
   color: #c86cc0;
 
@@ -271,6 +266,7 @@ ul.breadcrumb li:last-child {
   flex-grow: 2;
   flex-basis: auto;
 }
+
 .caption h2 {
   font-size: 3rem;
   font-family: "Poppins", sans-serif;
@@ -300,10 +296,6 @@ ul.breadcrumb li:last-child {
 .card-img {
   border: 1px soid green;
   flex-grow: 1;
-  /* flex-basis: 700px; */
-  /* flex-basis: 40%; */
-  /* width: 330px; */
-  /* width: 40%; */
   height: 100%;
   border-radius: 25px;
 }
@@ -323,7 +315,6 @@ ul.breadcrumb li:last-child {
 }
 
 .card-cast {
-  /* border: 1px solid pink; */
   width: 20%;
 }
 
@@ -334,10 +325,6 @@ ul.breadcrumb li:last-child {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-
-/* .cast-img {
-  width: 150px;
-} */
 
 .cast-img img {
   width: 100%;
@@ -392,7 +379,6 @@ ul.breadcrumb li:last-child {
   }
 
   .card-cast {
-    /* border: 1px solid pink; */
     width: 45%;
   }
   .row-cast {
@@ -401,11 +387,9 @@ ul.breadcrumb li:last-child {
 
   .swiper {
     height: 50vh;
-    /* background-color: aqua; */
   }
 
   .swiper-slide img {
-    /* display: block; */
     width: 100%;
     height: 50vh;
     object-fit: cover;
