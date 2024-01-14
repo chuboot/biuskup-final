@@ -401,16 +401,6 @@ ul.breadcrumb li:last-child {
     justify-content: space-between;
   }
 
-  .swiper {
-    height: 50vh;
-  }
-
-  .swiper-slide img {
-    width: 100%;
-    height: 50vh;
-    object-fit: cover;
-  }
-
   .w-social {
     width: 50%;
     margin-right: auto;
