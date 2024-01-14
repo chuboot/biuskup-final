@@ -147,8 +147,8 @@ const main = () => {
     });
     const detailMovie = document.querySelectorAll('.card-movie-img img');
     detailMovie.forEach((img) => {
-      img.addEventListener('click', async function () {
-        const movieID = this.dataset.id;
+      img.addEventListener('click', async (event) => {
+        const movieID = event.target.dataset.id;
         topFunction();
         // console.log(movieID);
         await fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US`)
