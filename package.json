@@ -8,17 +8,9 @@
     "build": "webpack --config webpack.prod.js",
     "serve": "webpack serve --config webpack.dev.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chuboot/biuskup-v3.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/chuboot/biuskup-v3/issues"
-  },
-  "homepage": "https://github.com/chuboot/biuskup-v3#readme",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",

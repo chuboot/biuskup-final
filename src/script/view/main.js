@@ -24,26 +24,7 @@ const swiper = new Swiper('.mySwiper', {
 });
 
 const main = () => {
-  const getCards = async () => {
-    const response = await fetch(
-      'https://api.themoviedb.org/3/movie/popular?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US&page=1'
-    );
-
-    const responseJson = await response.json();
-    const movies = responseJson.results;
-    renderAllMovies(movies);
-  };
-
-  const getSlides = async () => {
-    const response = await fetch(
-      'https://api.themoviedb.org/3/movie/popular?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US&page=1'
-    );
-
-    const resJson = await response.json();
-    const slides = resJson.results.slice(0, 4);
-    renderAllSlides(slides);
-  };
-
+  // render slides
   const renderAllSlides = (slides) => {
     const wrapperSlide = document.querySelector('.swiper-wrapper');
     wrapperSlide.innerHTML = '';
@@ -63,28 +44,7 @@ const main = () => {
     });
   };
 
-  const getCast = async (movidcast) => {
-    await fetch(
-      `https://api.themoviedb.org/3/movie/${movidcast}/credits?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US`
-    )
-      .then((response) => response.json())
-      .then((rescast) => {
-        const moviesCast = rescast.cast.slice(0, 4);
-        renderAllCast(moviesCast);
-      });
-  };
-
-  const getTrailer = async (movivid) => {
-    await fetch(
-      `https://api.themoviedb.org/3/movie/${movivid}/videos?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US`
-    )
-      .then((response) => response.json())
-      .then((resvid) => {
-        const moviesTrailer = resvid.results.slice(0, 2);
-        renderAllTrailer(moviesTrailer);
-      });
-  };
-
+  // render all casts
   const renderAllCast = (moviesCast) => {
     const listCast = document.createElement('div');
     listCast.innerHTML = '';
@@ -98,15 +58,14 @@ const main = () => {
         </div>
       `;
     });
-
     listCast.classList.add('row-cast');
     document.querySelector('.caption').appendChild(listCast);
   };
 
+  // render all trailers
   const renderAllTrailer = (moviesTrailer) => {
     const listTrailer = document.createElement('div');
     listTrailer.innerHTML = '';
-
     moviesTrailer.forEach((trailer, index) => {
       listTrailer.innerHTML += `
         <h2>Official Trailer #${index + 1}</h2>
@@ -121,47 +80,63 @@ const main = () => {
         ></iframe>
       `;
     });
-
     listTrailer.classList.add('trailer');
     document.querySelector('section .container').appendChild(listTrailer);
   };
+  // top function
+  const topFunction = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
+
+  const getCast = async (movidcast) => {
+    await fetch(`https://api.themoviedb.org/3/movie/${movidcast}/credits?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US`)
+      .then((response) => response.json())
+      .then((rescast) => {
+        const moviesCast = rescast.cast.slice(0, 4);
+        renderAllCast(moviesCast);
+      });
+  };
+
+  const getTrailer = async (movivid) => {
+    await fetch(`https://api.themoviedb.org/3/movie/${movivid}/videos?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US`)
+      .then((response) => response.json())
+      .then((resvid) => {
+        const moviesTrailer = resvid.results.slice(0, 2);
+        renderAllTrailer(moviesTrailer);
+      });
+  };
 
   const showMovieDetail = (resmovie) => `
-      <div class="backdrop">
-        <img src="https://www.themoviedb.org/t/p/original/${
-          resmovie.backdrop_path
-        }"" alt="${resmovie.title}" />
-      </div>
-      <div class="container">
+    <div class="backdrop">
+      <img src="https://www.themoviedb.org/t/p/original/${resmovie.backdrop_path}"
+      alt="${resmovie.title}"
+      />
+    </div>
+    <div class="container">
       <ul class="breadcrumb">
         <li><a href="/">Home</a></li>
         <li>${resmovie.title}</li>
       </ul>
-        <div class="hero">
-          <div class="card-img">
-            <img src="https://www.themoviedb.org/t/p/original/${
-              resmovie.poster_path
-            }"" alt="${resmovie.title}" />
-          </div>
-          <div class="caption">
-            <h2>${resmovie.title}</h2>
-            
-            <h5 class="caption-year">${resmovie.release_date.slice(0, 4)}</h5>
-            <div>${resmovie.genres
-              .map((genre) => `<span>${genre.name}</span>`)
-              .join(' - ')}</div>
-            <p>${resmovie.overview}</p>
-            <h4>Cast:</h4>
-    
-          </div>
+      <div class="hero">
+        <div class="card-img">
+          <img src="https://www.themoviedb.org/t/p/original/${resmovie.poster_path}" alt="${resmovie.title}" />
+        </div>
+        <div class="caption">
+        <h2>${resmovie.title}</h2>
+        <h5 class="caption-year">${resmovie.release_date.slice(0, 4)}</h5>
+        <div>${resmovie.genres.map((genre) => `<span>${genre.name}</span>`).join(' - ')}</div>
+        <p>${resmovie.overview}</p>
+        <h4>Cast:</h4>
         </div>
       </div>
+    </div>  
     `;
 
+  // reander all movies
   const renderAllMovies = (movies) => {
     const listMovieElement = document.querySelector('.movie-list');
     listMovieElement.innerHTML = '';
-
     movies.forEach((movie) => {
       listMovieElement.innerHTML += `
         <div class="card-movie">
@@ -172,16 +147,13 @@ const main = () => {
         </div>
       `;
     });
-
     const detailMovie = document.querySelectorAll('.card-movie-img img');
     detailMovie.forEach((img) => {
       img.addEventListener('click', async function () {
         const movieID = this.dataset.id;
         topFunction();
         // console.log(movieID);
-        await fetch(
-          `https://api.themoviedb.org/3/movie/${movieID}?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US`
-        )
+        await fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US`)
           .then((response) => response.json())
           .then((resmovie) => {
             const secMovie = document.querySelector('section');
@@ -194,13 +166,24 @@ const main = () => {
     });
   };
 
+  const getCards = async () => {
+    const response = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US&page=1');
+
+    const responseJson = await response.json();
+    const movies = responseJson.results;
+    renderAllMovies(movies);
+  };
+
+  const getSlides = async () => {
+    const response = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US&page=1');
+
+    const resJson = await response.json();
+    const slides = resJson.results.slice(0, 4);
+    renderAllSlides(slides);
+  };
+
   getSlides();
   getCards();
-
-  const topFunction = () => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  };
 
   // change bg when scroll
 
