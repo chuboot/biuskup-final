@@ -109,9 +109,7 @@ const main = () => {
 
   const showMovieDetail = (resmovie) => `
     <div class="backdrop">
-      <img src="https://www.themoviedb.org/t/p/original/${resmovie.backdrop_path}"
-      alt="${resmovie.title}"
-      />
+      <img src="https://www.themoviedb.org/t/p/original/${resmovie.backdrop_path}" alt="${resmovie.title}" />
     </div>
     <div class="container">
       <ul class="breadcrumb">
